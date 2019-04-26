@@ -1,4 +1,7 @@
+
+{{ if .Params.hasMath }}
   <script>renderMathInElement(document.body);</script>
+{{ end }}
   {{ template "_internal/google_analytics_async.html" . }}
 </body>
 </html>
