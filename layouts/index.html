@@ -4,7 +4,11 @@
   <ul class=posts_listing>
     {{ range where .Data.Pages.ByPublishDate.Reverse "Type" "post" }}
       <li>
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}
+				{{ if .Draft }}
+					<span class="red" style="font-weight: bold;">DRAFT</span>
+				{{ end }}
+				</a></h2>
         <div id=date>
           <time>{{ .Date.Format (.Site.Params.dateform | default "January 2006") }}</time>
         </div>
@@ -14,4 +18,3 @@
 </section>
 
 {{ partial "footer.html" . }}
-
