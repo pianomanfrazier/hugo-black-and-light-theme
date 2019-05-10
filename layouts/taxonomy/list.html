@@ -1,6 +1,7 @@
 {{ partial "header.html" . }}
 
 <section id=content>
+  <h1 style="text-align: center;">Tag: {{ .Title }}</h1>
   <ul class=posts_listing>
     {{ range .Pages }}
       <li>
