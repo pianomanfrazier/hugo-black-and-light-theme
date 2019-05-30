@@ -3,5 +3,35 @@
   <script>renderMathInElement(document.body);</script>
 {{ end }}
   {{ template "_internal/google_analytics_async.html" . }}
+  <style>
+    .direct-link {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .direct-link {
+      color: #BBB;
+      stroke: #BBB;
+    }
+    .direct-link:hover {
+      stroke: #222;
+    }
+  </style>
+  <script>
+    (function addHeadingLinks(){
+      var content = document.getElementById('content');
+      var headings = content.querySelectorAll('h2, h3, h4, h5, h6');
+      headings.forEach(function(heading){
+        if(heading.id){
+          var a = document.createElement('a');
+          a.href = '#' + heading.id;
+          a.classList.add('direct-link');
+          // a.innerHTML = '<svg class="direct-link" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M18 8 C18 8 24 2 27 5 30 8 29 12 24 16 19 20 16 21 14 17 M14 24 C14 24 8 30 5 27 2 24 3 20 8 16 13 12 16 11 18 15" /></svg>';
+          // a.innerHTML = '<svg class="direct-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line x1="8" x2="16" y1="12" y2="12"/></svg>';
+          a.innerHTML = '<svg class="direct-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+          heading.appendChild(a);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
