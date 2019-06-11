@@ -50,41 +50,31 @@
     background-color: #f0f3f3;
   }
 
-  code {
-    font-size: 14px;
-    padding: 4px;
-  }
-
   pre {
     margin-top: 0;
-    /* margin-bottom: 16px; */
     margin-bottom: 0;
     word-wrap: normal;
-    padding: 16px;
+    padding: 3em 2em;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
+		position: relative;
   }
 
-  pre>code {
-    padding: 0;
-    margin: 0;
+  pre > code {
     font-size: 100%;
     word-break: normal;
     white-space: pre;
     background: transparent;
-    border: 0;
   }
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
     line-height: inherit;
     word-wrap: normal;
-    /* background-color: transparent; */
     border: 0;
   }
 
@@ -92,6 +82,43 @@
   pre code::after {
     content: normal;
   }
+	pre code[data-lang]::before {
+	 content: attr(data-lang);
+	 color: #666;
+	 font-weight: bold;
+	 position: absolute;
+	 top: 1em;
+	 right: 1em;
+	}
+	pre code[data-lang="go-html-template"]::before {
+		content: "Go HTML Template"
+	}
+	pre code[data-lang="js"]::before {
+		content: "JavaScript"
+	}
+	pre code[data-lang="jinja"]::before {
+		content: "Jinja Template"
+	}
+	pre code[data-lang="latex"]::before {
+		content: "LaTeX"
+	}
+	pre code[data-lang="elm"]::before {
+		content: "Elm"
+	}
+	pre code[data-lang="html"]::before,
+	pre code[data-lang="c"]::before,
+	pre code[data-lang="tsx"]::before
+	{
+		text-transform: uppercase;
+	}
+	.language_lilypond::before {
+		 content: "LilyPond";
+		 color: #666;
+		 font-weight: bold;
+		 position: absolute;
+		 top: 1em;
+		 right: 1em;
+	}
 
   em,q,em,dfn {
     font-style:italic;
