@@ -13,6 +13,10 @@
   <div id=sub-header>
     {{ .Date.Format (.Site.Params.dateform | default "January 2006") }} · {{ .ReadingTime }} minute read
   </div>
+  {{ else if .Params.lastUpdate }}
+  <div id=sub-header>
+    Last updated {{ .Date.Format (.Site.Params.dateform | default "January 2006") }}
+  </div>
   {{ end }}
 
   <div class="entry-content">
