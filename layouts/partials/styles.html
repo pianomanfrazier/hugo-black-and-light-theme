@@ -27,15 +27,13 @@
     margin: 10px auto 10px auto;
     max-width: 100%;
     display: block;
-    border: 2px solid #222;
   }
 
   video {
     margin: 10px auto 10px auto;
     display: block;
     max-width: 100%;
-    border: 2px solid #222;
-  }
+}
   
   .profile-pic {
     border: none;
@@ -390,13 +388,12 @@
   }
 
   #nav ul {
-    display: table;
     margin: 8px auto 0 auto;
   }
 
   #nav li {
     list-style-type:none;
-    display:table-cell;
+    display: inline-block;
     font-size:15px;
     padding: 0 20px;
   }
@@ -446,6 +443,7 @@
 
     #nav li {
       padding: 0 15px;
+      margin-top: 15px;
     }
 
     #content {
@@ -473,5 +471,23 @@
     #content {
       padding-top: 40px;
     }
+  }
+  .link-btn {
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 8px;
+    text-decoration: none;
+  }
+  .link-btn:hover {
+    opacity: 0.8;
+    transition: 300ms;
+    text-decoration: none !important;
+  }
+  .bg-red {
+    background-color: rgb(255, 0, 119);
+    color: #FFF;
+  }
+  .text-large {
+    font-size: 1.3rem;
   }
 </style>
