@@ -7,10 +7,32 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    {{ if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
+    {{ if .Site.Params.description }}
+        <meta name="description" content="{{ .Site.Params.description }}">
+    {{ end }}
 
     {{ if not .Site.Params.disableWebFonts }}
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400' rel='stylesheet' type='text/css'>
+    {{ end }}
+
+    <meta property="og:title" content="{{ .Params.title }}">
+    {{ if .Params.description }}
+        <meta property="og:description" content="{{ .Params.description }}">
+        <meta property="twitter:description" content="{{ .Params.description }}">
+    {{ end }}
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Params.sitename }}">
+    {{ if .Site.Params.twitter }}
+        <meta name="twitter:site" content="@{{ .Site.Params.twitter }}">
+        <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
+    {{ end }}
+    <meta property="twitter:url" content="{{ .Permalink }}">
+    {{ if .Params.socialImage }}
+        <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.socialImage }}">
+        <meta property="og:image:alt" content="{{ .Params.socialImageAlt }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.socialImage }}">
+        <meta name="twitter:image:alt" content="{{ .Params.socialImageAlt }}">
     {{ end }}
 
 {{ if .Params.hasMath }}
